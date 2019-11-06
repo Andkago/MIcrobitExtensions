@@ -1,5 +1,5 @@
 namespace ROBO {
-    function Venstre(Tid: number, Fart: number) {
+    export function Venstre(Tid: number, Fart: number): void {
         pins.digitalWritePin(DigitalPin.P5, 0)
         pins.digitalWritePin(DigitalPin.P16, 1)
         pins.analogWritePin(AnalogPin.P0, Fart * 100)
@@ -7,12 +7,12 @@ namespace ROBO {
         basic.pause(Tid * 1000)
         stop()
     }
-    function SpillLyd(Tid: number) {
+    export function SpillLyd(Tid: number): void {
         pins.analogSetPitchPin(AnalogPin.P9)
         music.beginMelody(music.builtInMelody(Melodies.Dadadadum), MelodyOptions.Forever)
         basic.pause(Tid)
     }
-    function Fremover(Tid: number, Fart: number) {
+    export function Fremover(Tid: number, Fart: number): void {
         pins.digitalWritePin(DigitalPin.P5, 1)
         pins.digitalWritePin(DigitalPin.P16, 1)
         pins.analogWritePin(AnalogPin.P0, Fart * 100)
@@ -20,7 +20,7 @@ namespace ROBO {
         basic.pause(Tid * 1000)
         stop()
     }
-    function Bakover(Tid: number, Fart: number) {
+    export function Bakover(Tid: number, Fart: number): void {
         pins.digitalWritePin(DigitalPin.P5, 0)
         pins.digitalWritePin(DigitalPin.P16, 0)
         pins.analogWritePin(AnalogPin.P0, Fart * 100)
@@ -28,13 +28,13 @@ namespace ROBO {
         basic.pause(Tid * 1000)
         stop()
     }
-    function FortsetFremover2(Fart: number) {
+    export function FortsetFremover2(Fart: number): void {
         pins.digitalWritePin(DigitalPin.P5, 1)
         pins.digitalWritePin(DigitalPin.P16, 1)
         pins.analogWritePin(AnalogPin.P0, Fart * 100)
         pins.analogWritePin(AnalogPin.P1, Fart * 100)
     }
-    function Høyre(Tid: number, Fart: number) {
+    export function Høyre(Tid: number, Fart: number): void {
         pins.digitalWritePin(DigitalPin.P5, 1)
         pins.digitalWritePin(DigitalPin.P16, 0)
         pins.analogWritePin(AnalogPin.P0, Fart * 100)
